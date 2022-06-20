@@ -14,7 +14,7 @@ To test the best model (`minilm-uncased-squad2`), add a list of newline-delimite
     `!pip install -U pip setuptools wheel`\
     `!pip install spacy`\
     `!python -m spacy download en_core_web_trf`\
-    `!pip install spacy transformers`\
+    `!pip install spacy transformers`
 3. run any of the commands - for retraining (GPU required), see the [Subtask 4 of the Solution section](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=sRsbmO2xCd5h) in [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing)
 
 
