@@ -10,7 +10,7 @@ To test the best model (`minilm-uncased-squad2`), add a list of newline-delimite
 
 1. clone the repo and cd into it
 2. copy one or more [trained model directories](https://drive.google.com/drive/folders/1-5SxyYSaiTy-BzWfGCV7dunHurJkxwdz?usp=sharing) to `models/`
-2. create a Python environment and install these dependencies:
+2. create a Python environment and install these dependencies:\
     `!pip install -U pip setuptools wheel`\
     `!pip install spacy`\
     `!python -m spacy download en_core_web_trf`\
