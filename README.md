@@ -4,7 +4,7 @@
 
 For details on data sourcing and training experiments, see this [Colab](https://colab.research.google.com/drive/1U0RYkKf0P9SM0JA4CeLjLZDYgaQ0DjQ_?usp=sharing) notebook. A copy is stored in `experiments.ipynb`.
 
-To test the best model, add a list of newline-delimited sentences to `assets/sentences.txt`, and run [`spacy project run infer`] after configuring env variables (either directly in `config/rel_trf.cfg` or via CLI). See the `Demo` section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) notebook for an example.
+To test the best model (`minilm-uncased-squad2`), add a list of newline-delimited sentences to `assets/sentences.txt`, and run [`spacy project run infer`] after configuring env variables (either directly in `config/rel_trf.cfg` or via CLI). See the `Demo` section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) notebook for an example.
 
 ### Usage
 
