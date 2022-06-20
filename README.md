@@ -12,10 +12,12 @@ To test the best model, follow the installation steps, add a list of newline-del
 1. clone the repo and `cd` into it
 2. copy one or more [trained model directories](https://drive.google.com/drive/folders/1-5SxyYSaiTy-BzWfGCV7dunHurJkxwdz?usp=sharing) to the `models` directory
 2. create a Python environment and install these dependencies:\
+
     `!pip install -U pip setuptools wheel`\
     `!pip install spacy`\
     `!python -m spacy download en_core_web_trf`\
     `!pip install spacy transformers`
+    
 3. run any of the commands - for retraining (GPU required), see the [Subtask 4 of the Solution section](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=sRsbmO2xCd5h) in [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing)
 
 
