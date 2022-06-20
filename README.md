@@ -2,26 +2,26 @@
 
 # Overview: Relation extraction with spaCy
 
-For details on data sourcing and training experiments, see this [Colab](https://colab.research.google.com/drive/1U0RYkKf0P9SM0JA4CeLjLZDYgaQ0DjQ_?usp=sharing) notebook. A copy is stored in `experiments.ipynb`.
+For details on data sourcing and training experiments, see this [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing) notebook. A copy is stored in `experiments.ipynb`.
 
-To test the best model (`minilm-uncased-squad2`), add a list of newline-delimited sentences to `assets/sentences.txt`, and run [`spacy project run infer`] after configuring env variables (either directly in `config/rel_trf.cfg` or via CLI). See the `Demo` section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) notebook for an example.
+To test the best model (`minilm-uncased-squad2`), add a list of newline-delimited sentences to `assets/sentences.txt`, and run `spacy project run infer` after configuring env variables (either directly in `configs/rel_trf.cfg` or via CLI). See the [Demo](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing) notebook for an example.
 
 ### Usage
 
 1. clone the repo and cd into it
-2. copy one or more [trained model directories](https://drive.google.com/drive/folders/1-5SxyYSaiTy-BzWfGCV7dunHurJkxwdz?usp=sharing) to `models`
+2. copy one or more [trained model directories](https://drive.google.com/drive/folders/1-5SxyYSaiTy-BzWfGCV7dunHurJkxwdz?usp=sharing) to `models/`
 2. create a Python environment and install these dependencies:
-    !pip install -U pip setuptools wheel
-    !pip install spacy
-    !python -m spacy download en_core_web_trf
-    !pip install spacy transformers
-3. run any of the commands - for retraining (GPU required), see the `Subtask 4` of the `Solution` section in [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=sRsbmO2xCd5h)
+    `!pip install -U pip setuptools wheel`
+    `!pip install spacy`
+    `!python -m spacy download en_core_web_trf`
+    `!pip install spacy transformers`
+3. run any of the commands - for retraining (GPU required), see the [Subtask 4 of the Solution section](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=sRsbmO2xCd5h) in [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing)
 
 
 ### Commands
 
 The following commands are defined by the project. They
-can be executed using [`spacy project run [name]`](https://spacy.io/api/cli#project-run).
+can be executed using `spacy project run [name]`
 Commands are only re-run if their inputs have changed.
 
 | Command | Description |
