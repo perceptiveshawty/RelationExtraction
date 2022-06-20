@@ -1,0 +1,71 @@
+title: "Relation extraction with spaCy"
+
+description: "For details on data sourcing and training experiments, see this [Colab](https://colab.research.google.com/drive/1U0RYkKf0P9SM0JA4CeLjLZDYgaQ0DjQ_?usp=sharing) notebook. To test the best model, add a list of newline-delimited sentences to `assets/sentences.txt`, and run [`spacy project run [name]`] after configuring env variables (either directly in `config/rel_trf.cfg` or via CLI)." 
+
+
+env:
+  TRF_PATH: TRF_PATH
+  TRF_NAME: MODEL_STRING
+  TRAIN_BIN: TRAIN_BIN
+  DEV_BIN: DEV_BIN
+  TEST_BIN: TEST_BIN
+
+vars:
+  sentences: "assets/sentences.txt"
+  trf_config: "configs/rel_trf.cfg"
+  train_file: "data/${env.TRAIN_BIN}"
+  dev_file: "data/${env.DEV_BIN}"
+  test_file: "data/${env.TEST_BIN}"
+  input_file: "assets/sentences.spacy"
+  output_file: "assets/output/extracted_sentences.txt"
+  model_dir: "models/${env.TRF_NAME}"
+  trained_model: "models/${env.TRF_NAME}/model-best"
+
+directories: ["scripts", "configs", "assets", "data", "models", "output"]
+
+
+
+# Assets
+assets:
+    - dest: ${vars.sentences}
+      description: "Input sentence file for inference, one example per line, separated by newlines."
+    
+    
+
+# Project commands
+commands:
+
+  - name: "train"
+    help: "Train the model with a Transformer on a GPU and evaluate on the dev corpus. Works fine with Colab GPUs."
+    script:
+      - "python -m spacy train ${vars.trf_config} --output ${vars.model_dir} --components.transformer.model.name ${env.TRF_PATH} --paths.train ${vars.train_file} --paths.dev ${vars.dev_file} -c ./scripts/custom_functions.py --gpu-id 0"
+    deps:
+      - ${vars.train_file}
+      - ${vars.dev_file}
+    outputs:
+      - ${vars.trained_model}
+
+
+
+  - name: "evaluate"
+    help: "Apply model specified in the environment variable TRF_NAME to new, unseen text, and measure accuracy at different thresholds."
+    script:
+      - "python ./scripts/evaluate.py ${vars.trained_model} ${vars.test_file} False"
+    deps:
+      - ${vars.trained_model}
+      - ${vars.test_file}
+
+
+  - name: "infer"
+    help: "Apply the model to an arbitrary list of sentences, for qualitative evaluation or model probing."
+    script:
+      - "python ./scripts/inference.py ${vars.sentences} ${vars.trained_model} ${vars.output_file}"
+
+
+
+  - name: "clean"
+    help: "Remove intermediate files to start data preparation from a clean slate."
+    script:
+      - "rm -rf assets/sentences.spacy"
+      - "rm -rf assets/output/*"
+      - "rm -rf training"

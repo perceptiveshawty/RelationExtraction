@@ -1,0 +1,4 @@
+{'index': 0, 'person_and_company': ('Daniel Spielman', 'Yale University')}
+{'index': 1, 'person_and_company': ('Spielman', 'MIT')}
+{'index': 1, 'person_and_company': ('Shang-Hua Teng', 'MIT')}
+{'index': 3, 'person_and_company': ('Joanna Drążkowska', 'Ludwig Maximilian University of Munich')}
