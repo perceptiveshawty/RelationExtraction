@@ -4,7 +4,7 @@
 
 For details on data sourcing and model training, see this [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing) notebook. A copy is stored in `experiments.ipynb`.
 
-To test the best trained model (`minilm-uncased-squad2`), follow the installation steps, add a list of newline-delimited sentences to `assets/sentences.txt`, and run `spacy project run infer` after configuring the env variables `TRF_PATH` and `MODEL_STRING` (either directly in `project.yml` or via CLI). See the [Demo](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing) notebook for an example. 
+To test the best model, follow the installation steps, add a list of newline-delimited sentences to `assets/sentences.txt`, and run `spacy project run infer` after configuring the env variables `TRF_PATH="deepset/minilm-uncased-squad2"` and `MODEL_STRING="`minilm-uncased-squad2`"` (either directly in `project.yml` or via CLI). See the [Demo](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE#scrollTo=-fl1qdKS1nhZ) section of the [Colab](https://colab.research.google.com/drive/1marycqYnZzFB-Rqd6crFFYvZvWOtaKoE?usp=sharing) notebook for an example. 
 
 
 ### Installation
