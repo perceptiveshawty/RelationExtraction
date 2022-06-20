@@ -11,7 +11,7 @@ To test the best model, follow the installation steps, add a list of newline-del
 
 1. clone the repo and `cd` into it
 2. copy one or more [trained model directories](https://drive.google.com/drive/folders/1-5SxyYSaiTy-BzWfGCV7dunHurJkxwdz?usp=sharing) to the `models` directory
-2. create a Python environment and install these dependencies:\
+2. create a Python environment and install these dependencies:
 
     `!pip install -U pip setuptools wheel`\
     `!pip install spacy`\
